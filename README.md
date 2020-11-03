@@ -1,0 +1,2 @@
+# Fetching and Parsing JSON from a Web API
+This project uses the [Animal Crossing New Horizons API](https://acnhapi.com/v1/villagers) villagers resource to fetch each villager's name, species, and catch phrase.

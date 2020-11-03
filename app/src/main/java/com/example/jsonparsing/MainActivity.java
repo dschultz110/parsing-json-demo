@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     buffer.append(line + "\n");
                     Log.d("Response", " > " + line);
                 }
+                // Return the string to be used in onPostExecute
                 return buffer.toString();
 
             } catch (MalformedURLException e) {
@@ -106,13 +107,12 @@ public class MainActivity extends AppCompatActivity {
                         // Nested object, names are in different languages
                         JSONObject nameObj = (JSONObject) villager.get("name");
                         Object name = nameObj.get("name-USen");
-
+                        // Direct key-value pairs
                         Object phrase = villager.get("catch-phrase");
-
                         Object species = villager.get("species");
 
                         // Print the results to the text view
-                        txtResult.append(name.toString() + " the " + species + " says \'" + phrase + "\'\n");
+                        txtResult.append(name + " the " + species + " says \'" + phrase + "\'\n");
                     } catch (JSONException e) {
                         Log.d("JSON", " > " + e.toString());
                     }
